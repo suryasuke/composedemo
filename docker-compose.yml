@@ -1,0 +1,16 @@
+services:
+   frontend:
+     build: ./frontend
+     ports:
+       - "80:80"
+
+   backend:
+     build: ./dummy-backend
+     ports:
+       - "3000:3000"
+     networks:
+       - networkname 
+
+networks:
+   networkname:
+       driver: bridge
